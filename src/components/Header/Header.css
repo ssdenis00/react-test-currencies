@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.header__link {
+  text-decoration: none;
+  color: blue;
+  font-weight: normal;
+  transition: transform 0.3s ease-in-out;
+}
+
+.header__link:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.header__link_active {
+  color: blueviolet;
+  font-weight: bold;
+}

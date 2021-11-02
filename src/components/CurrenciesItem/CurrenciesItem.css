@@ -1,0 +1,15 @@
+.currencies__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.currencies__default {
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.currencies__value {
+  margin: 0;
+}
