@@ -16,10 +16,12 @@ function Converter() {
     const arr = data.split(" ");
     let [value, forValute, separator, inValute] = arr;
 
-    value = parseInt(value);
-    forValute = forValute.toLowerCase();
-    separator = separator.toLowerCase();
-    inValute = inValute.toLowerCase();
+    if (arr.length === 4) {
+      value = parseInt(value);
+      forValute = forValute.toLowerCase();
+      separator = separator.toLowerCase();
+      inValute = inValute.toLowerCase();
+    }
 
     return { value, forValute, separator, inValute };
   }
@@ -36,9 +38,13 @@ function Converter() {
     const whiteList = ["usd", "eur", "rub"];
     if (value.separator !== "in") {
       return false;
+    } else if (value.inValute === undefined || !value.forValute === undefined) {
+      return false;
     } else if (!whiteList.includes(value.inValute)) {
       return false;
     } else if (!whiteList.includes(value.forValute)) {
+      return false;
+    } else if (value.forValute === value.inValute) {
       return false;
     } else {
       return true;
